@@ -1,14 +1,15 @@
-service:
-  name: aws-node-auction-service
+service: aws-node-auction-service
+frameworkVersion: '3'
 
 plugins:
   - serverless-bundle
-  - serverless-pseudo-parameters
 
 provider:
   name: aws
   runtime: nodejs12.x
   memorySize: 256
+  region: us-east-1
+  profile: serverless-admin
   stage: ${opt:stage, 'dev'}
   
 functions:
